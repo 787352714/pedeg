@@ -11,8 +11,12 @@ class Article(models.Model):
     article_header = models.CharField(max_length=200)
     article_contain = models.TextField(blank=True, null=True)
     article_time = models.DateTimeField('pub time')
+    def __str__(self):
+        return self.article_contain
 
 class ShortArtical(models.Model):
     shortartical_id = models.AutoField
     shortartical_contain = models.CharField(max_length=500)
     shortartical_time = models.DateTimeField('shortpub time')
+    def __str__(self):
+        return self.shortartical_contain
